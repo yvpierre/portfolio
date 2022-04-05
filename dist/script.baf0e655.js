@@ -117,79 +117,30 @@ parcelRequire = (function (modules, cache, entry, globalName) {
   }
 
   return newRequire;
-})({"node_modules/parcel-bundler/src/builtins/bundle-url.js":[function(require,module,exports) {
-var bundleURL = null;
+})({"src/script.js":[function(require,module,exports) {
+var loader = document.getElementById("preloaderdefou");
+var cursorRounded = document.querySelector(".rounded");
+var menuItem = document.querySelector(".menu");
+var nom = document.querySelector(".nom");
+menuItem.addEventListener("mouseover", function () {
+  menuItem.style.color = "blue !important";
+});
+window.addEventListener("load", function () {
+  window.setTimeout(removeLoader, 1000);
+});
 
-function getBundleURLCached() {
-  if (!bundleURL) {
-    bundleURL = getBundleURL();
-  }
-
-  return bundleURL;
+function removeLoader() {
+  loader.style.display = "none";
 }
 
-function getBundleURL() {
-  // Attempt to find the URL of the current script and use that as the base URL
-  try {
-    throw new Error();
-  } catch (err) {
-    var matches = ('' + err.stack).match(/(https?|file|ftp|chrome-extension|moz-extension):\/\/[^)\n]+/g);
+var moveCursor = function moveCursor(e) {
+  var mouseY = e.clientY;
+  var mouseX = e.clientX;
+  cursorRounded.style.transform = "translate3d(".concat(mouseX, "px, ").concat(mouseY, "px, 0)");
+};
 
-    if (matches) {
-      return getBaseURL(matches[0]);
-    }
-  }
-
-  return '/';
-}
-
-function getBaseURL(url) {
-  return ('' + url).replace(/^((?:https?|file|ftp|chrome-extension|moz-extension):\/\/.+)?\/[^/]+(?:\?.*)?$/, '$1') + '/';
-}
-
-exports.getBundleURL = getBundleURLCached;
-exports.getBaseURL = getBaseURL;
-},{}],"node_modules/parcel-bundler/src/builtins/css-loader.js":[function(require,module,exports) {
-var bundle = require('./bundle-url');
-
-function updateLink(link) {
-  var newLink = link.cloneNode();
-
-  newLink.onload = function () {
-    link.remove();
-  };
-
-  newLink.href = link.href.split('?')[0] + '?' + Date.now();
-  link.parentNode.insertBefore(newLink, link.nextSibling);
-}
-
-var cssTimeout = null;
-
-function reloadCSS() {
-  if (cssTimeout) {
-    return;
-  }
-
-  cssTimeout = setTimeout(function () {
-    var links = document.querySelectorAll('link[rel="stylesheet"]');
-
-    for (var i = 0; i < links.length; i++) {
-      if (bundle.getBaseURL(links[i].href) === bundle.getBundleURL()) {
-        updateLink(links[i]);
-      }
-    }
-
-    cssTimeout = null;
-  }, 50);
-}
-
-module.exports = reloadCSS;
-},{"./bundle-url":"node_modules/parcel-bundler/src/builtins/bundle-url.js"}],"src/styles.scss":[function(require,module,exports) {
-var reloadCSS = require('_css_loader');
-
-module.hot.dispose(reloadCSS);
-module.hot.accept(reloadCSS);
-},{"/Users/pierre/Documents/Prog/Web/Portfolio/assets/fonts/Coconat-Regular.woff2":[["Coconat-Regular.abd64c28.woff2","assets/fonts/Coconat-Regular.woff2"],"assets/fonts/Coconat-Regular.woff2"],"/Users/pierre/Documents/Prog/Web/Portfolio/assets/fonts/Coconat-Regular.woff":[["Coconat-Regular.deb48d3d.woff","assets/fonts/Coconat-Regular.woff"],"assets/fonts/Coconat-Regular.woff"],"./../assets/res/photo.jpg":[["photo.b1e3752a.jpg","assets/res/photo.jpg"],"assets/res/photo.jpg"],"/Users/pierre/Documents/Prog/Web/Portfolio/assets/res/loader.svg":[["loader.22762186.svg","assets/res/loader.svg"],"assets/res/loader.svg"],"_css_loader":"node_modules/parcel-bundler/src/builtins/css-loader.js"}],"node_modules/parcel-bundler/src/builtins/hmr-runtime.js":[function(require,module,exports) {
+window.addEventListener('mousemove', moveCursor);
+},{}],"node_modules/parcel-bundler/src/builtins/hmr-runtime.js":[function(require,module,exports) {
 var global = arguments[3];
 var OVERLAY_ID = '__parcel__error__overlay__';
 var OldModule = module.bundle.Module;
@@ -393,5 +344,5 @@ function hmrAcceptRun(bundle, id) {
     return true;
   }
 }
-},{}]},{},["node_modules/parcel-bundler/src/builtins/hmr-runtime.js"], null)
-//# sourceMappingURL=/styles.962e011e.js.map
+},{}]},{},["node_modules/parcel-bundler/src/builtins/hmr-runtime.js","src/script.js"], null)
+//# sourceMappingURL=/script.baf0e655.js.map

@@ -184,12 +184,7 @@ function reloadCSS() {
 }
 
 module.exports = reloadCSS;
-},{"./bundle-url":"node_modules/parcel-bundler/src/builtins/bundle-url.js"}],"src/styles.scss":[function(require,module,exports) {
-var reloadCSS = require('_css_loader');
-
-module.hot.dispose(reloadCSS);
-module.hot.accept(reloadCSS);
-},{"/Users/pierre/Documents/Prog/Web/Portfolio/assets/fonts/Coconat-Regular.woff2":[["Coconat-Regular.abd64c28.woff2","assets/fonts/Coconat-Regular.woff2"],"assets/fonts/Coconat-Regular.woff2"],"/Users/pierre/Documents/Prog/Web/Portfolio/assets/fonts/Coconat-Regular.woff":[["Coconat-Regular.deb48d3d.woff","assets/fonts/Coconat-Regular.woff"],"assets/fonts/Coconat-Regular.woff"],"./../assets/res/photo.jpg":[["photo.b1e3752a.jpg","assets/res/photo.jpg"],"assets/res/photo.jpg"],"/Users/pierre/Documents/Prog/Web/Portfolio/assets/res/loader.svg":[["loader.22762186.svg","assets/res/loader.svg"],"assets/res/loader.svg"],"_css_loader":"node_modules/parcel-bundler/src/builtins/css-loader.js"}],"node_modules/parcel-bundler/src/builtins/hmr-runtime.js":[function(require,module,exports) {
+},{"./bundle-url":"node_modules/parcel-bundler/src/builtins/bundle-url.js"}],"node_modules/parcel-bundler/src/builtins/hmr-runtime.js":[function(require,module,exports) {
 var global = arguments[3];
 var OVERLAY_ID = '__parcel__error__overlay__';
 var OldModule = module.bundle.Module;
@@ -394,4 +389,4 @@ function hmrAcceptRun(bundle, id) {
   }
 }
 },{}]},{},["node_modules/parcel-bundler/src/builtins/hmr-runtime.js"], null)
-//# sourceMappingURL=/styles.962e011e.js.map
+//# sourceMappingURL=/index.js.map
