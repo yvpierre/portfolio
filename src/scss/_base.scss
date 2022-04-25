@@ -245,3 +245,31 @@ h2 {
 a {
   cursor: none;
 }
+
+.studiesMain {
+  display: flex;
+  flex-flow: column nowrap;
+  justify-content: center;
+  align-items: center;
+  height: 500px;
+  margin-top: 90px;
+}
+
+.studiesMain--elem {
+  display: flex;
+  flex-flow: column nowrap;
+  justify-content: center;
+  align-items: center;
+  width: 300px;
+  height: 80px;
+  border: 2px solid var(--color-dark-purple);
+  margin: 20px -100px 20px 0px;
+}
+
+.studiesMain--elem:nth-child(odd) {
+  margin-right: 100px;
+}
+
+@media (max-width: 600px){
+
+}
