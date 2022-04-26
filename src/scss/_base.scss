@@ -33,7 +33,7 @@ h1, h2, h3, h4 {
   top:0;
   bottom: 0;
   display: grid;
-  grid-template-columns: 3fr 5fr 2fr;
+  grid-template-columns: 3fr 6fr 3fr;
   grid-template-rows: 90px 4fr 80px;
   grid-column-gap: 0px;
   grid-row-gap: 0px;
@@ -142,48 +142,8 @@ h2 {
 }
 
 .right {
-  text-align: center;
-}
-
-.right > h2 {
-  margin-top: 30px;
-}
-
-.like {
-  display: flex;
-  flex-direction: row;
-  flex-wrap: wrap;
-  justify-content: center;
-}
-
-.like > div {
-  margin: 10px;
-  width: 90px;
-  height: 90px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  border: 3px solid var(--color-dark-purple);
-  border-radius: 5px;
-  font-size: 15px;
-}
-
-.like > div .question {
-  font-weight: 600;
-  font-size: 40px !important;
-}
-
-.like > div .answer {
-  display: none;
-}
-
-.like > div:hover .answer {
-  display: block;
-}
-
-.like > div:hover .question {
-  display: none;
-  transition: 2s ease-in;
+  text-align: justify-all;
+  padding: 15px 15px 0 15px;
 }
 
 #preloaderdefou {
@@ -270,6 +230,50 @@ a {
   margin-right: 100px;
 }
 
-@media (max-width: 600px){
+.scrollerDingo {
+  height: 50px;
+  line-height: 50px;
+  position: relative;
+  overflow: hidden;
+}
 
+h1 {
+  font-size: 40px;
+}
+
+.scrollerDingo > span {
+  position: absolute;
+  top: 0;
+  animation: slide 15s infinite;
+  font-weight: bold;
+}
+
+@keyframes slide {
+  0% {
+    top: 0;
+  }
+  12.5% {
+    top: -50px;
+  }
+  25% {
+    top: -100px;
+  }
+  37.5% {
+    top: -150px;
+  }
+  50% {
+    top: -200px;
+  }
+  62.5% {
+    top: -250px;
+  }
+  75% {
+    top: -300px;
+  }
+  87.5% {
+    top: -350px;
+  }
+  100% {
+    top: -400em;
+  }
 }
