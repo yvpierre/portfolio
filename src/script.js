@@ -21,7 +21,7 @@ window.addEventListener("load", function(){
             removeLoader();
             var tl = gsap.timeline();
             tl.to(".nom",{ y:0, opacity:1, duration:1})
-        }, 1000
+        }, 500
     );
 
 })
@@ -56,7 +56,13 @@ function scrollText() {
         wrapper.classList.add('top')
         setTimeout(function(){
             let text1 = item2.textContent
-            let text2 = likes[getRandomInt(likes.length, text1)]
+            let rdm = likes[getRandomInt(likes.length, text1)]
+            if(rdm === text2 || rdm === text1) {
+                while(rdm === text2 || rdm === text1){
+                    rdm = likes[getRandomInt(likes.length, text1)]
+                }
+            }
+            let  text2 = rdm
             item1.innerHTML = text1
             item2.innerHTML = text2
             wrapper.classList.remove('top')

@@ -32,7 +32,7 @@ h1, h2, h3, h4 {
   top:0;
   bottom: 0;
   display: grid;
-  grid-template-columns: 3fr 6fr 3fr;
+  grid-template-columns: 3fr 6fr 2fr;
   grid-template-rows: 90px 4fr 80px;
   grid-column-gap: 0px;
   grid-row-gap: 0px;
@@ -50,6 +50,8 @@ h1, h2, h3, h4 {
 }
 
 .left {
+  position: relative;
+  right: 0;
   background: url("../../Portfolio/assets/res/photo.jpg");
   background-size: cover;
   border-left: none !important;
@@ -207,39 +209,12 @@ a {
   cursor: none;
 }
 
-.studiesMain {
-  display: flex;
-  flex-flow: column nowrap;
-  justify-content: center;
-  align-items: center;
-  height: 500px;
-  margin-top: 90px;
-}
-
-.studiesMain--elem {
-  display: flex;
-  flex-flow: column nowrap;
-  justify-content: center;
-  align-items: center;
-  width: 300px;
-  height: 80px;
-  border: 2px solid $dark;
-  margin: 20px -100px 20px 0px;
-}
-
-.studiesMain--elem:nth-child(odd) {
-  margin-right: 100px;
-}
 
 .scrollerDingo {
   height: 50px;
   line-height: 50px;
   position: relative;
   overflow: hidden;
-}
-
-.wrapper{
-
 }
 
 .scrollerDingo  > div {
@@ -258,4 +233,83 @@ a {
 .top{
   transform: translateY(-50px);
   transition: all 1s ease-in-out;
+}
+
+.scrollFlex {
+  display: inline;
+}
+
+
+
+.main--text {
+  margin-top: 75px;
+}
+
+
+
+.studiesMain {
+  display: flex;
+  flex-flow: column nowrap;
+  align-items: center;
+  margin-top: 190px;
+}
+
+.studiesMain--elem {
+  position: relative;
+  display: flex;
+  flex-flow: column nowrap;
+  width: 550px;
+  height: 500px;
+  line-height: 1.5;
+  text-justify: inter-word;
+  margin: 20px -500px 20px 0px;
+}
+
+.studiesMain--elem:hover .studies--name {
+  text-decoration: underline;
+  text-decoration-thickness: from-font;
+  text-underline-offset: 2px;
+}
+.studiesMain--elem > div {
+  position: relative;
+  left: 0 !important;
+}
+
+.studies--name {
+  line-height: 40px;
+  font-size: 40px;
+  text-transform: uppercase;
+  white-space: nowrap;
+  font-family: 'Cormorant Garamond', serif !important;
+  letter-spacing: -2px;
+}
+
+
+
+.studiesMain--elem:nth-child(odd) {
+  margin-right: 500px;
+
+  .studiesMain--elem > div {
+    right: 0;
+  }
+
+}
+
+.studies--location, .studies--length {
+  position: absolute;
+  left: 0;
+}
+
+
+.studies--location {
+  font-size: 20px;
+}
+
+.studies--length {
+  font-style: italic;
+}
+
+.studies--text {
+  text-align: justify;
+  margin-top: 10px;
 }
