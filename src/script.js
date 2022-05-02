@@ -1,3 +1,5 @@
+import { gsap } from 'gsap';
+
 let loader = document.getElementById("preloaderdefou");
 const cursorRounded = document.querySelector(".rounded");
 let menuItem = document.querySelector(".menu");
@@ -39,7 +41,11 @@ const moveCursor = (e)=> {
 
 }
 window.addEventListener('mousemove', moveCursor);
-
+window.addEventListener('scroll', () => {
+    if (window.offsetHeight + window.scrollTop >= window.scrollHeight) {
+        console.log('scrolled to bottom')
+    }
+})
 function scrollText() {
     let item1 = document.querySelector(".item--1")
     let item2 = document.querySelector(".item--2")

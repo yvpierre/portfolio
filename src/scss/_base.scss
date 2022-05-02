@@ -46,13 +46,13 @@ h1, h2, h3, h4 {
   border-top: none !important;
   border-left: none !important;
   border-right: none !important;
-  color: $dark
+  color: $dark;
 }
 
 .left {
   position: relative;
   right: 0;
-  background: url("../../Portfolio/assets/res/photo.jpg");
+  background: url("/assets/res/photo.jpg") center;
   background-size: cover;
   border-left: none !important;
   border-bottom: none !important;
@@ -192,7 +192,7 @@ h2 {
   border-bottom: 4px solid $dark;
 }
 
-.rounded{
+.rounded {
   width: 15px;
   height: 15px;
   border: 1px solid $dark;
@@ -200,6 +200,7 @@ h2 {
   margin-left: -7px;
   margin-top: -7px;
 }
+
 
 .menu > li:hover .rounded {
   background: $cream;
@@ -235,16 +236,10 @@ a {
   transition: all 1s ease-in-out;
 }
 
-.scrollFlex {
-  display: inline;
-}
-
-
 
 .main--text {
   margin-top: 75px;
 }
-
 
 
 .studiesMain {
@@ -270,6 +265,7 @@ a {
   text-decoration-thickness: from-font;
   text-underline-offset: 2px;
 }
+
 .studiesMain--elem > div {
   position: relative;
   left: 0 !important;
@@ -285,14 +281,17 @@ a {
 }
 
 
+.bg--Waves{
+  position: relative;
+  left: 0;
+  right: 0;
+  width: 100%;
+  background-color: $dark;
+  color: $cream;
+}
 
-.studiesMain--elem:nth-child(odd) {
-  margin-right: 500px;
-
-  .studiesMain--elem > div {
-    right: 0;
-  }
-
+.studiesMain--elem--odd {
+  margin-left: -500px;
 }
 
 .studies--location, .studies--length {
