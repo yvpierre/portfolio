@@ -1,4 +1,7 @@
-import { gsap } from 'gsap';
+import { gsap } from "gsap";
+import { ScrollTrigger } from "gsap/ScrollTrigger";
+
+gsap.registerPlugin(ScrollTrigger);
 
 let loader = document.getElementById("preloaderdefou");
 const cursorRounded = document.querySelector(".rounded");
@@ -81,3 +84,17 @@ function scrollText() {
 
 }
 
+const showAnim = gsap.from('.navbar--others', {
+    yPercent: -100,
+    paused: true,
+    duration: 0.2
+}).progress(1);
+
+ScrollTrigger.create({
+    start: "top top",
+    end: 99999,
+    onUpdate: (self) => {
+        console.log("testGSAP")
+        self.direction === -1 ? showAnim.play() : showAnim.reverse()
+    }
+});

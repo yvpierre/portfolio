@@ -5,7 +5,8 @@
 }
 
 body {
-  cursor: none ;
+  scroll-behavior: smooth;
+  // cursor: none ;
   color: $dark;
   font-family: 'eesti';
   font-size: 16px;
@@ -166,13 +167,13 @@ h2 {
      opacity: 0.9;
   }
   90% {
-    opacity: 0.2;
+    opacity: 0.4;
   }
   92.5% {
-    opacity: 0.1;
+    opacity: 0.2;
   }
   95% {
-    opacity: 0.01;
+    opacity: 0.1;
   }
   100% {
     opacity: 0;
@@ -185,11 +186,18 @@ h2 {
   flex-direction: row;
   align-items: center;
   justify-content: space-between;
-  position: absolute;
+  position: fixed;
   top: 0;
   right: 0;
   left: 0;
+  background-color: $cream;
   border-bottom: 4px solid $dark;
+  width: 100%;
+  transition: ease 0.4s;
+  z-index: 99999;
+  &--scrolled {
+    height: 60px;
+  }
 }
 
 .rounded {
@@ -207,7 +215,7 @@ h2 {
 }
 
 a {
-  cursor: none;
+  // cursor: none;
 }
 
 
@@ -252,12 +260,13 @@ a {
 .studiesMain--elem {
   position: relative;
   display: flex;
+  justify-content: center;
   flex-flow: column nowrap;
   width: 550px;
-  height: 500px;
+  height: 80vh;
   line-height: 1.5;
   text-justify: inter-word;
-  margin: 20px -500px 20px 0px;
+  margin: 20px 0px 20px 0px;
 }
 
 .studiesMain--elem:hover .studies--name {
@@ -283,15 +292,26 @@ a {
 
 .bg--Waves{
   position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
   left: 0;
   right: 0;
   width: 100%;
+  height: 500px;
   background-color: $dark;
   color: $cream;
 }
 
-.studiesMain--elem--odd {
-  margin-left: -500px;
+.bg--Waves > .studiesMain--elem {
+
+  ::selection {
+    background-color: $cream;
+    color: $dark;
+  }
+
+  padding-bottom: 100px;
+
 }
 
 .studies--location, .studies--length {
@@ -311,4 +331,8 @@ a {
 .studies--text {
   text-align: justify;
   margin-top: 10px;
+}
+
+.studiesMain--elem.last {
+  margin-bottom: 100px;
 }
