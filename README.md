@@ -1,11 +1,11 @@
+# 2022-2023 Personnal Portfolio
+
+## Quickstart
+```bash
+npm i # install dependencies
+tsc --watch # build ts files to js
+npm run start # in another terminal
 ``` 
-2022-2023 Personnal Portfolio
+## Access
+```localhost:1234```
 
-npm install
-npm run start
-
-localhost:1234
-
-based on benjamin code's sandbox
-
-``` 
